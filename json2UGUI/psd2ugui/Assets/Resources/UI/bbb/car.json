@@ -1,0 +1,165 @@
+{
+	"name": "car",
+	"child": [
+		{
+			"name": "garagecar_15",
+			"type": "bg",
+			"scale": "ch",
+			"resource": "img1",
+			"child": null,
+			"bounds": [
+				0,
+				159,
+				178,
+				384
+			]
+		},
+		{
+			"name": "Garage_02",
+			"type": "p",
+			"scale": "ch",
+			"child": [
+				{
+					"name": "pg62",
+					"type": "btn",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "name",
+							"type": "idle",
+							"scale": "ch",
+							"resource": "123",
+							"child": null,
+							"bounds": [
+								2,
+								335,
+								176,
+								382
+							]
+						}
+					],
+					"bounds": [
+						2,
+						335,
+						176,
+						382
+					]
+				},
+				{
+					"name": "name2",
+					"type": "bg",
+					"scale": "ch",
+					"resource": "321",
+					"child": null,
+					"bounds": [
+						2,
+						335,
+						176,
+						382
+					]
+				},
+				{
+					"name": "garagecar_14",
+					"type": "bg",
+					"scale": "ch",
+					"resource": "6666",
+					"child": null,
+					"bounds": [
+						2,
+						298,
+						166,
+						311
+					]
+				},
+				{
+					"name": "garagecar_13",
+					"type": "bg",
+					"scale": "ch",
+					"resource": "555",
+					"child": null,
+					"bounds": [
+						4,
+						300,
+						164,
+						309
+					]
+				},
+				{
+					"text": "[Power",
+					"font": "MyriadPro-Regular",
+					"color": {
+						"red": 250.014743506908,
+						"green": 250.9990426898,
+						"blue": 250.9990426898,
+						"hexValue": "FAFBFB",
+						"typename": "RGBColor"
+					},
+					"size": 18,
+					"name": "pg58",
+					"type": "txt",
+					"scale": "ch",
+					"resource": "",
+					"child": null,
+					"bounds": [
+						5,
+						314,
+						56,
+						329
+					]
+				},
+				{
+					"text": "[GTR",
+					"font": "MyriadPro-Regular",
+					"color": {
+						"red": 250.014743506908,
+						"green": 250.9990426898,
+						"blue": 250.9990426898,
+						"hexValue": "FAFBFB",
+						"typename": "RGBColor"
+					},
+					"size": 25,
+					"name": "pg57",
+					"type": "txt",
+					"scale": "ch",
+					"resource": "",
+					"child": null,
+					"bounds": [
+						63,
+						358,
+						112,
+						380
+					]
+				},
+				{
+					"text": "[[S]100",
+					"font": "MyriadPro-Regular",
+					"color": {
+						"red": 250.014743506908,
+						"green": 250.9990426898,
+						"blue": 250.9990426898,
+						"hexValue": "FAFBFB",
+						"typename": "RGBColor"
+					},
+					"size": 19,
+					"name": "pg56",
+					"type": "txt",
+					"scale": "ch",
+					"resource": "",
+					"child": null,
+					"bounds": [
+						63,
+						337,
+						119,
+						354
+					]
+				}
+			],
+			"bounds": [
+				2,
+				298,
+				176,
+				382
+			]
+		}
+	]
+}

@@ -1,0 +1,875 @@
+{
+	"name": "CarDealer",
+	"child": [
+		{
+			"name": "p_CarDealer_03",
+			"type": "p",
+			"scale": "ch",
+			"child": [
+				{
+					"name": "CarDealer_bg03",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "CarDealer_bg03_1",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_15",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "garagecar_15",
+									"child": null,
+									"bounds": [
+										618,
+										114,
+										798,
+										402
+									]
+								}
+							],
+							"bounds": [
+								618,
+								114,
+								798,
+								402
+							]
+						},
+						{
+							"name": "CarDealer_bgeff_02",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "CarDealer_bgeff",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "CarDealer_bgeff",
+									"child": null,
+									"bounds": [
+										619,
+										115,
+										727,
+										246
+									]
+								}
+							],
+							"bounds": [
+								619,
+								115,
+								727,
+								246
+							]
+						},
+						{
+							"name": "CarDealer_bgeff_01",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "CarDealer_bgeff",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "CarDealer_bgeff",
+									"child": null,
+									"bounds": [
+										689,
+										115,
+										797,
+										246
+									]
+								}
+							],
+							"bounds": [
+								689,
+								115,
+								797,
+								246
+							]
+						}
+					],
+					"bounds": [
+						618,
+						114,
+						798,
+						402
+					]
+				},
+				{
+					"name": "CarDealer_gold",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "CarDealer_gold_05",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cashbg_02",
+									"type": "p",
+									"scale": "ch",
+									"resource": "bg_02",
+									"child": null,
+									"bounds": [
+										688,
+										141,
+										792,
+										169
+									]
+								}
+							],
+							"bounds": [
+								688,
+								141,
+								792,
+								169
+							]
+						},
+						{
+							"name": "CarDealer_gold_04",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cashbg_01",
+									"type": "p",
+									"scale": "ch",
+									"resource": "bg_01",
+									"child": null,
+									"bounds": [
+										716,
+										142,
+										791,
+										168
+									]
+								}
+							],
+							"bounds": [
+								716,
+								142,
+								791,
+								168
+							]
+						},
+						{
+							"name": "CarDealer_gold_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "icon_gold",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "icon_gold",
+									"child": null,
+									"bounds": [
+										732,
+										148,
+										744,
+										160
+									]
+								}
+							],
+							"bounds": [
+								732,
+								148,
+								744,
+								160
+							]
+						},
+						{
+							"text": "50000",
+							"font": "MyriadPro-Regular",
+							"color": {
+								"red": 221.000837981701,
+								"green": 166.40026062727,
+								"blue": 0,
+								"hexValue": "DDA600",
+								"typename": "RGBColor"
+							},
+							"size": 16,
+							"name": "CarDealer_gold_02",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								749,
+								147,
+								789,
+								159
+							]
+						},
+						{
+							"name": "CarDealer_gold_01",
+							"type": "btn",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cash_eff_p",
+									"type": "pressed",
+									"scale": "ch",
+									"resource": "btn2",
+									"child": null,
+									"bounds": [
+										688,
+										141,
+										792,
+										169
+									]
+								},
+								{
+									"name": "cash_eff",
+									"type": "idle",
+									"scale": "ch",
+									"resource": "btn1",
+									"child": null,
+									"bounds": [
+										688,
+										141,
+										792,
+										169
+									]
+								}
+							],
+							"bounds": [
+								688,
+								141,
+								792,
+								169
+							]
+						}
+					],
+					"bounds": [
+						688,
+						141,
+						792,
+						169
+					]
+				},
+				{
+					"name": "CarDealer_cash",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "CarDealer_cash_05",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cashbg_02",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "bg_02",
+									"child": null,
+									"bounds": [
+										688,
+										195,
+										792,
+										223
+									]
+								}
+							],
+							"bounds": [
+								688,
+								195,
+								792,
+								223
+							]
+						},
+						{
+							"name": "CarDealer_cash_04",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cashbg_01",
+									"type": "p",
+									"scale": "ch",
+									"resource": "bg_01",
+									"child": null,
+									"bounds": [
+										716,
+										196,
+										791,
+										222
+									]
+								}
+							],
+							"bounds": [
+								716,
+								196,
+								791,
+								222
+							]
+						},
+						{
+							"name": "CarDealer_cash_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "icon_cash",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "icon_cash",
+									"child": null,
+									"bounds": [
+										732,
+										202,
+										744,
+										214
+									]
+								}
+							],
+							"bounds": [
+								732,
+								202,
+								744,
+								214
+							]
+						},
+						{
+							"text": "50000",
+							"font": "MyriadPro-Regular",
+							"color": {
+								"red": 221.000837981701,
+								"green": 166.40026062727,
+								"blue": 0,
+								"hexValue": "DDA600",
+								"typename": "RGBColor"
+							},
+							"size": 16,
+							"name": "CarDealer_cash_02",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								749,
+								201,
+								789,
+								213
+							]
+						},
+						{
+							"name": "CarDealer_cash_01",
+							"type": "btn",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "cash_eff_p",
+									"type": "pressed",
+									"scale": "ch",
+									"resource": "btn2",
+									"child": null,
+									"bounds": [
+										688,
+										195,
+										792,
+										223
+									]
+								},
+								{
+									"name": "cash_eff",
+									"type": "idle",
+									"scale": "ch",
+									"resource": "btn1",
+									"child": null,
+									"bounds": [
+										688,
+										195,
+										792,
+										223
+									]
+								}
+							],
+							"bounds": [
+								688,
+								195,
+								792,
+								223
+							]
+						}
+					],
+					"bounds": [
+						688,
+						195,
+						792,
+						223
+					]
+				},
+				{
+					"name": "CarDealer_gear",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "bg_gear_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_14",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "bg",
+									"child": null,
+									"bounds": [
+										673,
+										239,
+										792,
+										245
+									]
+								}
+							],
+							"bounds": [
+								673,
+								239,
+								792,
+								245
+							]
+						},
+						{
+							"name": "prgh_gear_02",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_13",
+									"type": "prgh",
+									"scale": "ch",
+									"resource": "prgh",
+									"child": null,
+									"bounds": [
+										674,
+										240,
+										791,
+										244
+									]
+								}
+							],
+							"bounds": [
+								674,
+								240,
+								791,
+								244
+							]
+						},
+						{
+							"text": "Gear",
+							"font": "Calibri-LightItalic",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 18,
+							"name": "txt_gear_01",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								623,
+								238,
+								658,
+								250
+							]
+						}
+					],
+					"bounds": [
+						623,
+						238,
+						792,
+						250
+					]
+				},
+				{
+					"name": "CarDealer_grip",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "bg_grip_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_14",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "bg",
+									"child": null,
+									"bounds": [
+										673,
+										268,
+										792,
+										274
+									]
+								}
+							],
+							"bounds": [
+								673,
+								268,
+								792,
+								274
+							]
+						},
+						{
+							"name": "prgh_grip_02",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_13",
+									"type": "prgh",
+									"scale": "ch",
+									"resource": "prgh",
+									"child": null,
+									"bounds": [
+										674,
+										269,
+										791,
+										273
+									]
+								}
+							],
+							"bounds": [
+								674,
+								269,
+								791,
+								273
+							]
+						},
+						{
+							"text": "Grip",
+							"font": "Calibri-LightItalic",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 18,
+							"name": "txt_grip_01",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								623,
+								265,
+								653,
+								280
+							]
+						}
+					],
+					"bounds": [
+						623,
+						265,
+						792,
+						280
+					]
+				},
+				{
+					"name": "CarDealer_weight",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "bg_weight_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_14",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "bg",
+									"child": null,
+									"bounds": [
+										673,
+										299,
+										792,
+										305
+									]
+								}
+							],
+							"bounds": [
+								673,
+								299,
+								792,
+								305
+							]
+						},
+						{
+							"name": "prgh_weight_02",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_13",
+									"type": "prgh",
+									"scale": "ch",
+									"resource": "prgh",
+									"child": null,
+									"bounds": [
+										674,
+										300,
+										791,
+										304
+									]
+								}
+							],
+							"bounds": [
+								674,
+								300,
+								791,
+								304
+							]
+						},
+						{
+							"text": "Weight",
+							"font": "Calibri-LightItalic",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 18,
+							"name": "weight_01",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								622,
+								296,
+								674,
+								312
+							]
+						}
+					],
+					"bounds": [
+						622,
+						296,
+						792,
+						312
+					]
+				},
+				{
+					"name": "CarDealer_power",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "bg_power_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_14",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "bg",
+									"child": null,
+									"bounds": [
+										673,
+										329,
+										792,
+										335
+									]
+								}
+							],
+							"bounds": [
+								673,
+								329,
+								792,
+								335
+							]
+						},
+						{
+							"name": "prgh_power_02",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_13",
+									"type": "prgh",
+									"scale": "ch",
+									"resource": "prgh",
+									"child": null,
+									"bounds": [
+										674,
+										330,
+										791,
+										334
+									]
+								}
+							],
+							"bounds": [
+								674,
+								330,
+								791,
+								334
+							]
+						},
+						{
+							"text": "Power",
+							"font": "Calibri-LightItalic",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 18,
+							"name": "power_01",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								622,
+								329,
+								668,
+								341
+							]
+						}
+					],
+					"bounds": [
+						622,
+						329,
+						792,
+						341
+					]
+				},
+				{
+					"name": "CarDealer_carname",
+					"type": "p",
+					"scale": "ch",
+					"child": [
+						{
+							"name": "bg_carname_03",
+							"type": "p",
+							"scale": "ch",
+							"child": [
+								{
+									"name": "garagecar_12",
+									"type": "bg",
+									"scale": "ch",
+									"resource": "garagecar_12",
+									"child": null,
+									"bounds": [
+										654,
+										357,
+										800,
+										405
+									]
+								}
+							],
+							"bounds": [
+								654,
+								357,
+								800,
+								405
+							]
+						},
+						{
+							"text": "GTR",
+							"font": "MyriadPro-Regular",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 25,
+							"name": "txt_carname_02",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								748,
+								377,
+								795,
+								400
+							]
+						},
+						{
+							"text": "[S]100",
+							"font": "MyriadPro-Regular",
+							"color": {
+								"red": 250.014743506908,
+								"green": 250.9990426898,
+								"blue": 250.9990426898,
+								"hexValue": "FAFBFB",
+								"typename": "RGBColor"
+							},
+							"size": 14,
+							"name": "txt_carname_01",
+							"type": "txt",
+							"scale": "ch",
+							"resource": "",
+							"child": null,
+							"bounds": [
+								740,
+								363,
+								778,
+								376
+							]
+						}
+					],
+					"bounds": [
+						654,
+						357,
+						800,
+						405
+					]
+				},
+				{
+					"text": "OR",
+					"font": "MyriadPro-Regular",
+					"color": {
+						"red": 253.000805675983,
+						"green": 252.755992412567,
+						"blue": 252.008830904961,
+						"hexValue": "FDFDFC",
+						"typename": "RGBColor"
+					},
+					"size": 18,
+					"name": "CarDealer_OR",
+					"type": "txt",
+					"scale": "ch",
+					"resource": "",
+					"child": null,
+					"bounds": [
+						730,
+						175,
+						752,
+						189
+					]
+				}
+			],
+			"bounds": [
+				618,
+				114,
+				800,
+				405
+			]
+		}
+	]
+}
