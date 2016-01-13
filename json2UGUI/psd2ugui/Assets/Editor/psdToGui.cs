@@ -160,6 +160,24 @@ public class YsToUGUI : EditorWindow
 
 
     }
+    void addImage(JToken uiObject,GameObject go)
+    {
+        go.AddComponent<Image>();
+        //图片资源
+        string imgPath = Regex.Split(path, "Resources/")[1];
+        Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + uiObject["resource"], typeof(Sprite));
+        go.GetComponent<Image>().sprite = sprite;
+        //图片坐标,大小
+        int[] po = new int[4];
+        int i = 0;
+        foreach (var k in uiObject["bounds"].Children())
+        {
+            po[i++] = (int)k;
+        }
+        go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
+        go.GetComponent<RectTransform>().pivot = Vector2.zero;
+        go.GetComponent<RectTransform>().position = new Vector3(po[0], po[1], 0);
+    }
     GameObject createGo(JToken uiObject, GameObject parent)
     {
         GameObject go = new GameObject();
@@ -179,28 +197,54 @@ public class YsToUGUI : EditorWindow
     GameObject createBg(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
-        go.AddComponent<Image>();
-        //图片资源
-        string imgPath = Regex.Split(path, "Resources/")[1];
-        Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + uiObject["resource"], typeof(Sprite));
-        go.GetComponent<Image>().sprite = sprite;
-        //图片坐标,大小
-        int[] po = new int[4];
-        int i = 0;
-        foreach (var k in uiObject["bounds"].Children())
-        {
-            po[i++] = (int)k;
-        }
-        go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
-        go.GetComponent<RectTransform>().pivot = Vector2.zero;
-        go.GetComponent<RectTransform>().position = new Vector3(po[0], po[1], 0);
+        addImage(uiObject, go);
+        //go.AddComponent<Image>();
+        ////图片资源
+        //string imgPath = Regex.Split(path, "Resources/")[1];
+        //Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + uiObject["resource"], typeof(Sprite));
+        //go.GetComponent<Image>().sprite = sprite;
+        ////图片坐标,大小
+        //int[] po = new int[4];
+        //int i = 0;
+        //foreach (var k in uiObject["bounds"].Children())
+        //{
+        //    po[i++] = (int)k;
+        //}
+        //go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
+        //go.GetComponent<RectTransform>().pivot = Vector2.zero;
+        //go.GetComponent<RectTransform>().position = new Vector3(po[0], po[1], 0);
         return go;
     }
     GameObject createBtn(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
-        go.AddComponent<Image>();
+        addImage(uiObject, go);
+
+
+
+
         go.AddComponent<Button>();
+        go.GetComponent<Button>().transition = Selectable.Transition.SpriteSwap;
+        string imgPath = Regex.Split(path, "Resources/")[1];
+        foreach (JToken k in uiObject["child"].Children())
+        {
+            if((k["type"].ToString()=="idle"))
+            {
+                Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + k["resource"], typeof(Sprite));
+                go.GetComponent<Image>().sprite = sprite;
+            }
+            else if(k["type"].ToString()=="pressed")
+            {
+                Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + k["resource"], typeof(Sprite));
+                SpriteState sss = new SpriteState();
+                //sss.disabledSprite = sprite;
+                //sss.highlightedSprite = sprite;
+                sss.pressedSprite = sprite;
+                go.GetComponent<Button>().spriteState = sss;
+            }
+            
+        }
+        
 
         return go;
     }
@@ -248,6 +292,13 @@ public class YsToUGUI : EditorWindow
     GameObject createPrgh(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
+        addImage(uiObject, go);
+        
+        go.GetComponent<Image>().type = Image.Type.Filled;
+        go.GetComponent<Image>().fillMethod = Image.FillMethod.Horizontal;
+        
+
+
         return go;
     }
     GameObject createPrgv(JToken uiObject, GameObject parent)

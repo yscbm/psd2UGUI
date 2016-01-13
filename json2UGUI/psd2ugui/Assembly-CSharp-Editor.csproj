@@ -63,7 +63,7 @@
  <HintPath>D:/software_work/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>E:/workspace_u3d/toUGUI/psd2ugui/Assets/Newtonsoft.Json.dll</HintPath>
+ <HintPath>E:/workspace_ps/psd2UGUI/json2UGUI/psd2ugui/Assets/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:/software_work/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

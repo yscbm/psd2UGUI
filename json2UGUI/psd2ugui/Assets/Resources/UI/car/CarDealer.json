@@ -109,7 +109,7 @@
 							"child": [
 								{
 									"name": "cashbg_02",
-									"type": "p",
+									"type": "bg",
 									"scale": "ch",
 									"resource": "bg_02",
 									"child": null,
@@ -135,7 +135,7 @@
 							"child": [
 								{
 									"name": "cashbg_01",
-									"type": "p",
+									"type": "bg",
 									"scale": "ch",
 									"resource": "bg_01",
 									"child": null,
@@ -288,7 +288,7 @@
 							"child": [
 								{
 									"name": "cashbg_01",
-									"type": "p",
+									"type": "bg",
 									"scale": "ch",
 									"resource": "bg_01",
 									"child": null,
@@ -461,7 +461,7 @@
 							]
 						},
 						{
-							"text": "Gear",
+							"text": "[Gear",
 							"font": "Calibri-LightItalic",
 							"color": {
 								"red": 250.014743506908,
@@ -478,17 +478,17 @@
 							"child": null,
 							"bounds": [
 								623,
-								238,
-								658,
-								250
+								235,
+								664,
+								251
 							]
 						}
 					],
 					"bounds": [
 						623,
-						238,
+						235,
 						792,
-						250
+						251
 					]
 				},
 				{
@@ -549,7 +549,7 @@
 							]
 						},
 						{
-							"text": "Grip",
+							"text": "[Grip",
 							"font": "Calibri-LightItalic",
 							"color": {
 								"red": 250.014743506908,
@@ -567,8 +567,8 @@
 							"bounds": [
 								623,
 								265,
-								653,
-								280
+								658,
+								281
 							]
 						}
 					],
@@ -576,7 +576,7 @@
 						623,
 						265,
 						792,
-						280
+						281
 					]
 				},
 				{
@@ -637,7 +637,7 @@
 							]
 						},
 						{
-							"text": "Weight",
+							"text": "[Weight",
 							"font": "Calibri-LightItalic",
 							"color": {
 								"red": 250.014743506908,
@@ -653,15 +653,15 @@
 							"resource": "",
 							"child": null,
 							"bounds": [
-								622,
+								621,
 								296,
-								674,
+								679,
 								312
 							]
 						}
 					],
 					"bounds": [
-						622,
+						621,
 						296,
 						792,
 						312
@@ -725,7 +725,7 @@
 							]
 						},
 						{
-							"text": "Power",
+							"text": "[Power",
 							"font": "Calibri-LightItalic",
 							"color": {
 								"red": 250.014743506908,
@@ -742,17 +742,17 @@
 							"child": null,
 							"bounds": [
 								622,
-								329,
-								668,
-								341
+								326,
+								673,
+								342
 							]
 						}
 					],
 					"bounds": [
 						622,
-						329,
+						326,
 						792,
-						341
+						342
 					]
 				},
 				{
@@ -787,7 +787,7 @@
 							]
 						},
 						{
-							"text": "GTR",
+							"text": "[GTR",
 							"font": "MyriadPro-Regular",
 							"color": {
 								"red": 250.014743506908,
@@ -803,14 +803,14 @@
 							"resource": "",
 							"child": null,
 							"bounds": [
-								748,
-								377,
-								795,
+								749,
+								375,
+								802,
 								400
 							]
 						},
 						{
-							"text": "[S]100",
+							"text": "[[S]100",
 							"font": "MyriadPro-Regular",
 							"color": {
 								"red": 250.014743506908,
@@ -828,7 +828,7 @@
 							"bounds": [
 								740,
 								363,
-								778,
+								782,
 								376
 							]
 						}
@@ -836,12 +836,12 @@
 					"bounds": [
 						654,
 						357,
-						800,
+						802,
 						405
 					]
 				},
 				{
-					"text": "OR",
+					"text": "[OR",
 					"font": "MyriadPro-Regular",
 					"color": {
 						"red": 253.000805675983,
@@ -857,9 +857,9 @@
 					"resource": "",
 					"child": null,
 					"bounds": [
-						730,
-						175,
-						752,
+						731,
+						173,
+						757,
 						189
 					]
 				}
@@ -867,7 +867,7 @@
 			"bounds": [
 				618,
 				114,
-				800,
+				802,
 				405
 			]
 		}
