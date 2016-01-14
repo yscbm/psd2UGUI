@@ -26,13 +26,16 @@ function main () {
 
 }
 
-function DialogBuilder() {
-	widgets[0]=new UIName();
-	widgets[1]=new UIType();
-	widgets[2]=new UIScale();
-	widgets[3]=new UIResource();
-	widgets[4]=new ButtonOK();
-	widgets[5]=new ButtonCancel();
+function DialogBuilder(){
+	var index =0;
+	widgets[index++]=new UIName();
+	widgets[index++]=new UIType();
+	widgets[index++]=new UIScale();
+	widgets[index++]=new UIResource();
+	widgets[index++]=new UIAngle();
+
+	widgets[index++]=new ButtonOK();
+	widgets[index++]=new ButtonCancel();
 
 	this.bulid = function(){
 		var dlgStr = "dialog{text:'重命名',bounds:[0,0,400,300],";
@@ -51,7 +54,8 @@ function DialogBuilder() {
 		win.show();
 	}
 }
-function UIName() {
+
+function UIName(){
 	this.bulid = function () {
 		var str="UINameText:StaticText{text:'UI命名',bounds:[10,10,100,40],},";
 		str+="UINameEditText:EditText{text:'name',bounds:[10,30,300,50],}";
@@ -79,51 +83,51 @@ function UIType(){
     var typesDictionary = {};
     var id = 0;
     types[id]="面板(p)";
-    typesDictionary["p"] = types[id];
+    typesDictionary["p"] = id;
     typesDictionary[types[id++]] = "p";
 
     types[id]="背景(bg)";
-    typesDictionary["bg"] = types[id];
+    typesDictionary["bg"] = id;
     typesDictionary[types[id++]] = "bg";
 
     types[id]="按钮(btn)";
-    typesDictionary["btn"] = types[id];
+    typesDictionary["btn"] = id;
     typesDictionary[types[id++]] = "btn";
 
 	types[id]="按钮idle(idle)";
-    typesDictionary["idle"] = types[id];
+    typesDictionary["idle"] = id;
     typesDictionary[types[id++]] = "idle";
 
     types[id]="按钮pressed(pressed)";
-    typesDictionary["pressed"] = types[id];
+    typesDictionary["pressed"] = id;
     typesDictionary[types[id++]] = "pressed";
 
 	types[id]="按钮select(select)";
-    typesDictionary["select"] = types[id];
+    typesDictionary["select"] = id;
     typesDictionary[types[id++]] = "select";
 
     types[id]="点9图(9)";
-    typesDictionary["9"] = types[id];
+    typesDictionary["9"] = id;
     typesDictionary[types[id++]] = "9";
 
     types[id]="文字(txt)";
-    typesDictionary["txt"] = types[id];
+    typesDictionary["txt"] = id;
     typesDictionary[types[id++]] = "txt";
 
     types[id]="横进度条(prgh)";
-    typesDictionary["prgh"] = types[id];
+    typesDictionary["prgh"] = id;
     typesDictionary[types[id++]] = "prgh";
 
     types[id]="竖进度条(prgv)";
-    typesDictionary["prgv"] = types[id];
+    typesDictionary["prgv"] = id;
     typesDictionary[types[id++]] = "prgv";
 
     types[id]="圆进度条(prgr)";
-    typesDictionary["prgr"] = types[id];
+    typesDictionary["prgr"] = id;
     typesDictionary[types[id++]] = "prgr";
 
     types[id]="滑动列表(list)";
-    typesDictionary["list"] = types[id];
+    typesDictionary["list"] = id;
     typesDictionary[types[id++]] = "list";
 
 
@@ -141,7 +145,27 @@ function UIType(){
 		return str;
 	}
 	this.onCreate = function(win){
-		win.UITypeList.selection =0;
+		var name = app.activeDocument.activeLayer.name.split(',');
+		if(name[1] == null)
+		{
+			win.UITypeList.selection = 0;
+		}
+		else
+		{
+			if(typesDictionary[name[1]]!=null)
+			{
+				win.UITypeList.selection = typesDictionary[name[1]];
+			}
+			else
+			{
+				win.UITypeList.selection = 0;
+			}
+			//win.UIAngleEditText.text = name[1];
+		}
+
+		
+
+
 	}
 	this.getVal = function(text){
 		return typesDictionary[text];
@@ -183,7 +207,7 @@ function UIScale(){
 	}
 }
 
-function UIResource() {
+function UIResource(){
 	this.bulid = function () {
 		var str="UIResourceText:StaticText{text:'UI图片资源',bounds:[10,160,100,190],},";
 		str+="UIResourceEditText:EditText{text:'resource',bounds:[10,180,300,200],}";
@@ -212,6 +236,26 @@ function UIResource() {
 		// win.UINameEditText.text = name[0];
 	}
 }
+
+function UIAngle(){
+	this.bulid = function () {
+		var str="UIAngleText:StaticText{text:'UI旋转角度(图片相反用负值)',bounds:[10,210,200,240],},";
+		str+="UIAngleEditText:EditText{text:'0',bounds:[10,230,300,250],}";
+		return str;
+	}
+	this.onCreate = function(win){
+		var name = app.activeDocument.activeLayer.name.split(',');
+		if(name[4] == null)
+		{
+			win.UIAngleEditText.text = "0";
+		}
+		else
+		{
+			win.UIAngleEditText.text = name[4];
+		}
+	}
+}
+
 function ButtonOK(){
 	this.bulid = function () {
 		var str="ButtonOK:Button{text:'OK',bounds:[260,270,320,290],},";
@@ -234,12 +278,17 @@ function ButtonOK(){
         		{
         			strName += win.UINameEditText.text;
         		}
+
+        		//加旋转角度
+        		strName += ','+win.UIAngleEditText.text;
+
         		app.activeDocument.activeLayer.name =strName;
         		win.close(1);
         	}
         }
 	}
 }
+
 function ButtonCancel(){
 	this.bulid = function () {
 		var str="ButtonCancel:Button{text:'Cancel',bounds:[80,270,140,290],},";

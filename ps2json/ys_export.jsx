@@ -33,7 +33,7 @@ function main () {
     var ans={};
     //ans.name = "123";
     
-	win = new Window("palette{text:'导出进度',bounds:[0,0,20,150],UIschedule:StaticText{text:'1',bounds:[10,10,100,230]},}");
+	win = new Window("palette{text:'导出进度',bounds:[0,0,20,150],UIschedule:StaticText{text:'1',bounds:[10,10,200,430]},bounds:[0,0,400,300]}");
 	win.center();
 	win.show();
 	docParent = app.activeDocument;
@@ -48,11 +48,10 @@ function main () {
 
 function exportLayers(layer,vv){
 	var nameAndType = getNameAndType(layer.name)
-	if(nameAndType.type == null)
-	{
-		alert(nameAndType.name +"没有定义类型");
 
-		//return ;
+	if(layer.typename!="Document" && nameAndType.type == null)
+	{
+		alert(layer.name +"没有定义类型");
 	}
 
 	if(layer.typename == "ArtLayer")
@@ -63,7 +62,7 @@ function exportLayers(layer,vv){
 		vv.type = nameAndType.type;
 		vv.scale = nameAndType.scale;
 		vv.resource = nameAndType.resource;
-		
+		vv.angle = nameAndType.angle;
 		
 		vv.child = null;
 		win.UIschedule.text = layer.name;//显示进度，好像没啥用
@@ -177,6 +176,7 @@ function getNameAndType(strName){
 	nameAndType.type = strName.split(',')[1];
 	nameAndType.scale = strName.split(',')[2];
 	nameAndType.resource = strName.split(',')[3];
+	nameAndType.angle = strName.split(',')[4];
 
 	return nameAndType;
 }
