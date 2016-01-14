@@ -1,1 +1,24 @@
-psd导出到UGUI，告别拼UI!。
+psd导出到UGUI,告别拼UI!
+
+项目主要分为两部分:1,psd2json;2,json2UGUI.
+
+1,psd2json
+说明：
+把psd2json文件夹放入Adobe Photoshop CS6 (64 Bit)\Presets\Scripts\
+然后就能在ps 文件，脚本，选中需要脚本执行，可以把脚本设为快捷方式
+
+显示执行ys_rename.jsx脚本修改选中图像或组，进行重命名，脚本把图像类型信息存储在文件名中
+例如garagecar_15,bg,ch,garagecar_15这是一个背景，名叫garagecar_15，ui比例正常，资源名为garagecar_15
+例如garagecar_13,prgh,ch,prgh这是一个进度条，名叫garagecar_13，ui比例正常，资源名为prgh
+另一个工程里有命名样例
+
+把所有图像重命名后，执行ys_export.jsx脚本，通过获取图像名中的信息，以及通过ps获取图像位置等，将所有信息导出为json,供下一部分生成UI使用。
+
+2，json2UGUI
+说明
+把上一部的文件连同文件夹导出到unity的Resources/UI目录下
+执行unity编辑器脚本，psdToGui
+
+选中需要生成UI的资源文件夹，然后点击生成。
+
+实现方式，递归遍历json文件内信息，根据相关信息生成UGUI.

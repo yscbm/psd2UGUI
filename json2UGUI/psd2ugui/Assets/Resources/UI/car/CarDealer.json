@@ -73,6 +73,7 @@
 									"type": "bg",
 									"scale": "ch",
 									"resource": "CarDealer_bgeff",
+									"angle": "5",
 									"child": null,
 									"bounds": [
 										689,
@@ -95,6 +96,30 @@
 						114,
 						798,
 						402
+					]
+				},
+				{
+					"text": "[OR",
+					"font": "MyriadPro-Regular",
+					"color": {
+						"red": 253.000805675983,
+						"green": 252.755992412567,
+						"blue": 252.008830904961,
+						"hexValue": "FDFDFC",
+						"typename": "RGBColor"
+					},
+					"size": 18,
+					"name": "CarDealer_OR",
+					"type": "txt",
+					"scale": "ch",
+					"resource": "",
+					"angle": "0",
+					"child": null,
+					"bounds": [
+						731,
+						173,
+						757,
+						189
 					]
 				},
 				{
@@ -838,29 +863,6 @@
 						357,
 						802,
 						405
-					]
-				},
-				{
-					"text": "[OR",
-					"font": "MyriadPro-Regular",
-					"color": {
-						"red": 253.000805675983,
-						"green": 252.755992412567,
-						"blue": 252.008830904961,
-						"hexValue": "FDFDFC",
-						"typename": "RGBColor"
-					},
-					"size": 18,
-					"name": "CarDealer_OR",
-					"type": "txt",
-					"scale": "ch",
-					"resource": "",
-					"child": null,
-					"bounds": [
-						731,
-						173,
-						757,
-						189
 					]
 				}
 			],
