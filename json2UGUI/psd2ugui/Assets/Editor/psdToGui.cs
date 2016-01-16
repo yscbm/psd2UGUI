@@ -87,7 +87,8 @@ public class YsToUGUI : EditorWindow
                 canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
                 canvas.AddComponent<CanvasScaler>();
                 canvas.AddComponent<GraphicRaycaster>();
-
+                canvas.AddComponent<RectTransform>();
+                canvas.GetComponent<RectTransform>().position = Vector3.zero;
 
                 GameObject root = createGo(json, canvas);
 
@@ -190,7 +191,9 @@ public class YsToUGUI : EditorWindow
     {
 
         GameObject go = createGo(uiObject, parent);
-
+        go.GetComponent<RectTransform>().position = Vector3.zero;
+        go.GetComponent<RectTransform>().sizeDelta = Vector3.zero;
+        //go.GetComponent<RectTransform>(). = Vector3.zero;
         return go;
     }
 
@@ -198,21 +201,7 @@ public class YsToUGUI : EditorWindow
     {
         GameObject go = createGo(uiObject, parent);
         addImage(uiObject, go);
-        //go.AddComponent<Image>();
-        ////图片资源
-        //string imgPath = Regex.Split(path, "Resources/")[1];
-        //Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + uiObject["resource"], typeof(Sprite));
-        //go.GetComponent<Image>().sprite = sprite;
-        ////图片坐标,大小
-        //int[] po = new int[4];
-        //int i = 0;
-        //foreach (var k in uiObject["bounds"].Children())
-        //{
-        //    po[i++] = (int)k;
-        //}
-        //go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
-        //go.GetComponent<RectTransform>().pivot = Vector2.zero;
-        //go.GetComponent<RectTransform>().position = new Vector3(po[0], po[1], 0);
+
         return go;
     }
     GameObject createBtn(JToken uiObject, GameObject parent)

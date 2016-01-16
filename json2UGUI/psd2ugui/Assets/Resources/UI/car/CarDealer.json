@@ -1,5 +1,6 @@
 {
 	"name": "CarDealer",
+	"type": "p",
 	"child": [
 		{
 			"name": "p_CarDealer_03",
@@ -47,6 +48,7 @@
 									"type": "bg",
 									"scale": "ch",
 									"resource": "CarDealer_bgeff",
+									"angle": "-360",
 									"child": null,
 									"bounds": [
 										619,
@@ -73,7 +75,7 @@
 									"type": "bg",
 									"scale": "ch",
 									"resource": "CarDealer_bgeff",
-									"angle": "5",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										689,

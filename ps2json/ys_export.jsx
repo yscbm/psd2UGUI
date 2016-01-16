@@ -54,6 +54,10 @@ function exportLayers(layer,vv){
 		alert(layer.name +"没有定义类型");
 	}
 
+	if(layer.typename=="Document")
+	{
+		nameAndType.type = "p";
+	}
 	if(layer.typename == "ArtLayer")
 	{
 		//alert(layer.name);
