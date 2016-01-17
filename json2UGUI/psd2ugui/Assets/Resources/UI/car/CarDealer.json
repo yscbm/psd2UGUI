@@ -1,27 +1,35 @@
 {
+	"bounds": [
+		0,
+		0,
+		0,
+		0
+	],
 	"name": "CarDealer",
 	"type": "p",
+	"scale": "dy_a",
 	"child": [
 		{
 			"name": "p_CarDealer_03",
 			"type": "p",
-			"scale": "ch",
+			"scale": "dy_a",
 			"child": [
 				{
 					"name": "CarDealer_bg03",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "CarDealer_bg03_1",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_15",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "garagecar_15",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										618,
@@ -41,12 +49,12 @@
 						{
 							"name": "CarDealer_bgeff_02",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "CarDealer_bgeff",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "CarDealer_bgeff",
 									"angle": "-360",
 									"child": null,
@@ -68,12 +76,12 @@
 						{
 							"name": "CarDealer_bgeff_01",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "CarDealer_bgeff",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "CarDealer_bgeff",
 									"angle": "0",
 									"child": null,
@@ -113,7 +121,7 @@
 					"size": 18,
 					"name": "CarDealer_OR",
 					"type": "txt",
-					"scale": "ch",
+					"scale": "dy_a",
 					"resource": "",
 					"angle": "0",
 					"child": null,
@@ -127,18 +135,19 @@
 				{
 					"name": "CarDealer_gold",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "CarDealer_gold_05",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cashbg_02",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg_02",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -158,13 +167,14 @@
 						{
 							"name": "CarDealer_gold_04",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cashbg_01",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg_01",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										716,
@@ -184,13 +194,14 @@
 						{
 							"name": "CarDealer_gold_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "icon_gold",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "icon_gold",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										732,
@@ -220,8 +231,9 @@
 							"size": 16,
 							"name": "CarDealer_gold_02",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								749,
@@ -233,13 +245,14 @@
 						{
 							"name": "CarDealer_gold_01",
 							"type": "btn",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cash_eff_p",
 									"type": "pressed",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "btn2",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -251,8 +264,9 @@
 								{
 									"name": "cash_eff",
 									"type": "idle",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "btn1",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -280,18 +294,19 @@
 				{
 					"name": "CarDealer_cash",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "CarDealer_cash_05",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cashbg_02",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg_02",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -311,13 +326,14 @@
 						{
 							"name": "CarDealer_cash_04",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cashbg_01",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg_01",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										716,
@@ -337,13 +353,14 @@
 						{
 							"name": "CarDealer_cash_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "icon_cash",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "icon_cash",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										732,
@@ -373,8 +390,9 @@
 							"size": 16,
 							"name": "CarDealer_cash_02",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								749,
@@ -386,13 +404,14 @@
 						{
 							"name": "CarDealer_cash_01",
 							"type": "btn",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "cash_eff_p",
 									"type": "pressed",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "btn2",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -404,8 +423,9 @@
 								{
 									"name": "cash_eff",
 									"type": "idle",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "btn1",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										688,
@@ -433,18 +453,19 @@
 				{
 					"name": "CarDealer_gear",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "bg_gear_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_14",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										673,
@@ -464,13 +485,14 @@
 						{
 							"name": "prgh_gear_02",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_13",
 									"type": "prgh",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "prgh",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										674,
@@ -500,8 +522,9 @@
 							"size": 18,
 							"name": "txt_gear_01",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								623,
@@ -521,18 +544,19 @@
 				{
 					"name": "CarDealer_grip",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "bg_grip_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_14",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										673,
@@ -552,13 +576,14 @@
 						{
 							"name": "prgh_grip_02",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_13",
 									"type": "prgh",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "prgh",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										674,
@@ -588,8 +613,9 @@
 							"size": 18,
 							"name": "txt_grip_01",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								623,
@@ -609,18 +635,19 @@
 				{
 					"name": "CarDealer_weight",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "bg_weight_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_14",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										673,
@@ -640,13 +667,14 @@
 						{
 							"name": "prgh_weight_02",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_13",
 									"type": "prgh",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "prgh",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										674,
@@ -676,8 +704,9 @@
 							"size": 18,
 							"name": "weight_01",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								621,
@@ -697,18 +726,19 @@
 				{
 					"name": "CarDealer_power",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "bg_power_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_14",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "bg",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										673,
@@ -728,13 +758,14 @@
 						{
 							"name": "prgh_power_02",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_13",
 									"type": "prgh",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "prgh",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										674,
@@ -764,8 +795,9 @@
 							"size": 18,
 							"name": "power_01",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								622,
@@ -785,18 +817,19 @@
 				{
 					"name": "CarDealer_carname",
 					"type": "p",
-					"scale": "ch",
+					"scale": "dy_a",
 					"child": [
 						{
 							"name": "bg_carname_03",
 							"type": "p",
-							"scale": "ch",
+							"scale": "dy_a",
 							"child": [
 								{
 									"name": "garagecar_12",
 									"type": "bg",
-									"scale": "ch",
+									"scale": "dy_a",
 									"resource": "garagecar_12",
+									"angle": "0",
 									"child": null,
 									"bounds": [
 										654,
@@ -826,8 +859,9 @@
 							"size": 25,
 							"name": "txt_carname_02",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								749,
@@ -849,8 +883,9 @@
 							"size": 14,
 							"name": "txt_carname_01",
 							"type": "txt",
-							"scale": "ch",
+							"scale": "dy_a",
 							"resource": "",
+							"angle": "0",
 							"child": null,
 							"bounds": [
 								740,

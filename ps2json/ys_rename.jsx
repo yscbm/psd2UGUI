@@ -82,6 +82,7 @@ function UIType(){
 	var types = new Array();
     var typesDictionary = {};
     var id = 0;
+
     types[id]="面板(p)";
     typesDictionary["p"] = id;
     typesDictionary[types[id++]] = "p";
@@ -183,24 +184,115 @@ function UIType(){
 }
 
 function UIScale(){
+
+
 	var scales = new Array();
     var scalesDictionary = {};
-    scales[0] = "按比例";
-    scalesDictionary[scales[0]] = "ch";
-    scalesDictionary["ch"] =scales[0] ;
+    var id =0;
 
-    scales[1] = "固定比例";
-    scalesDictionary[scales[1]] = "st";
-    scalesDictionary["st"] =scales[1] ;
+    scales[id] = "拉伸，整体";
+    scalesDictionary["dy_a"] =id ;
+    scalesDictionary[scales[id++]] = "dy_a";
+
+    scales[id] = "拉伸，左右拉伸，上对齐";
+    scalesDictionary["dy_lr_t"] =id ;
+    scalesDictionary[scales[id++]] = "dy_lr_t";
+
+    scales[id] = "拉伸，左右拉伸，中对齐";
+    scalesDictionary["dy_lr_c"] =id ;
+    scalesDictionary[scales[id++]] = "dy_lr_c";
+
+    scales[id] = "拉伸，左右拉伸，下对齐";
+    scalesDictionary["dy_lr_b"] =id ;
+    scalesDictionary[scales[id++]] = "dy_lr_b";
+
+    scales[id] = "拉伸，上下拉伸，左对齐";
+    scalesDictionary["dy_tb_l"] =id ;
+    scalesDictionary[scales[id++]] = "dy_tb_l";
+
+    scales[id] = "拉伸，上下拉伸，中对齐";
+    scalesDictionary["dy_tb_c"] =id ;
+    scalesDictionary[scales[id++]] = "dy_tb_c";
+
+    scales[id] = "拉伸，上下拉伸，右对齐";
+    scalesDictionary["dy_tb_r"] =id ;
+    scalesDictionary[scales[id++]] = "dy_tb_r";
+
+    
+    scales[id] = "不拉伸，居中";
+    scalesDictionary["st_c"] =id ;
+    scalesDictionary[scales[id++]] = "st_c";
+
+    scales[id] = "不拉伸，上对其";
+    scalesDictionary["st_t"] =id ;
+    scalesDictionary[scales[id++]] = "st_t";
+
+    scales[id] = "不拉伸，下对其";
+    scalesDictionary["st_b"] =id ;
+    scalesDictionary[scales[id++]] = "st_b";
+
+    scales[id] = "不拉伸，左对齐";
+    scalesDictionary["st_l"] =id ;
+    scalesDictionary[scales[id++]] = "st_l";
+
+    scales[id] = "不拉伸，右对齐";
+    scalesDictionary["st_r"] =id ;
+    scalesDictionary[scales[id++]] = "st_r";
+
+    scales[id] = "不拉伸，左上对齐";
+    scalesDictionary["st_lt"] =id ;
+    scalesDictionary[scales[id++]] = "st_lt";
+
+    scales[id] = "不拉伸，右上对齐";
+    scalesDictionary["st_rt"] =id ;
+    scalesDictionary[scales[id++]] = "st_rt";
+
+    scales[id] = "不拉伸，左下对齐";
+    scalesDictionary["st_lb"] =id ;
+    scalesDictionary[scales[id++]] = "st_lb";
+
+    scales[id] = "不拉伸，右下对齐";
+    scalesDictionary["st_rb"] =id ;
+    scalesDictionary[scales[id++]] = "st_rb";
+
+
+
+    
+
 
 
 	this.bulid = function () {
+
 		var str="UIScaleText:StaticText{text:'UI比例',bounds:[10,110,100,140],},";
-		str+="UIScaleList:DropDownList{bounds:[10,130,300,150],properties: {items: ['按比例','固定比例']}}";
+		str+="UIScaleList:DropDownList{bounds:[10,130,300,150],properties: {items: ["
+		for(var i = 0; i < scales.length; i++) {
+            str += "'" + scales[i] + "'";
+            if(i < scales.length - 1)
+                str += ',';
+        }
+        str+="]}}";
 		return str;
 	}
 	this.onCreate = function(win){
-		win.UIScaleList.selection =0;
+		var name = app.activeDocument.activeLayer.name.split(',');
+		if(name[2] == null)
+		{
+			win.UIScaleList.selection = 0;
+		}
+		else
+		{
+			if(scalesDictionary[name[2]]!=null)
+			{
+				win.UIScaleList.selection = scalesDictionary[name[2]];
+			}
+			else
+			{
+				win.UIScaleList.selection = 0;
+			}
+			//win.UIAngleEditText.text = name[1];
+		}
+
+		//win.UIScaleList.selection =0;
 	}
 	this.getVal = function(text){
 		return scalesDictionary[text];

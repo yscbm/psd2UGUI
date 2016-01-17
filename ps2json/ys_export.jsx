@@ -37,6 +37,8 @@ function main () {
 	win.center();
 	win.show();
 	docParent = app.activeDocument;
+	exportLayersExamine(app.activeDocument);
+
 	exportLayers(app.activeDocument,ans);
 
 	var myObjectInJSON =  JSON.stringify(ans,null,"\t");
@@ -44,6 +46,23 @@ function main () {
 	txtFile.write(myObjectInJSON);
 
 	txtFile.close();
+}
+
+function exportLayersExamine(layer){
+	var nameAndType = getNameAndType(layer.name)
+
+	if(layer.typename!="Document" && nameAndType.type == null)
+	{
+		alert(layer.name +"没有定义类型");
+	}
+	if(layer.typename != "ArtLayer")
+	{
+		for(var i =layer.layers.length-1 ;i>=0;i--)
+		{
+			exportLayersExamine(layer.layers[i]);
+		}
+	}
+
 }
 
 function exportLayers(layer,vv){
@@ -57,6 +76,9 @@ function exportLayers(layer,vv){
 	if(layer.typename=="Document")
 	{
 		nameAndType.type = "p";
+		nameAndType.scale = "dy_a";
+		vv.bounds = new Array(0,0,0,0);
+		
 	}
 	if(layer.typename == "ArtLayer")
 	{
