@@ -168,6 +168,17 @@ public class YsToUGUI : EditorWindow
 
 
     }
+    Vector4 getBounds(JToken uiObject)
+    {
+        int[] po = new int[4];
+        int i = 0;
+        foreach (var k in uiObject["bounds"].Children())
+        {
+            po[i++] = (int)k;
+        }
+
+        return new Vector4(po[0], po[1], po[2], po[3]);
+    }
     void addImage(JToken uiObject,GameObject go)
     {
         go.AddComponent<Image>();
@@ -175,25 +186,23 @@ public class YsToUGUI : EditorWindow
         string imgPath = Regex.Split(path, "Resources/")[1];
         Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + uiObject["resource"], typeof(Sprite));
         go.GetComponent<Image>().sprite = sprite;
-        //图片坐标,大小
-        int[] po = new int[4];
-        int i = 0;
-        foreach (var k in uiObject["bounds"].Children())
-        {
-            po[i++] = (int)k;
-        }
-        go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
-        //go.GetComponent<RectTransform>().pivot = Vector2.zero;
-        go.GetComponent<RectTransform>().localPosition = new Vector3((po[0] + po[2])/2 - width/2, (po[1]+po[3])/2 - height/2, 0);
+
+
+        setAnchors(uiObject, go);
+
+        Vector4 po = getBounds(uiObject);
+        
+        go.GetComponent<RectTransform>().sizeDelta = new Vector2(po.z - po.x, po.w - po.y);
+        go.GetComponent<RectTransform>().localPosition = new Vector3((po.x + po.z) / 2 - width / 2, (po.y + po.w) / 2 - height / 2, 0);
 
         
 
     }
-    void rotateGo(GameObject go,int angle)
+    void rotateGo(JToken uiObject,GameObject go)
     {
         //图片旋转
         //Debug.Log(uiObject["name"].ToString());
-        
+        int angle = uiObject["angle"].ToObject<int>();
         Vector3 ro = Vector3.zero;
         if (angle < 0)
         {
@@ -217,8 +226,20 @@ public class YsToUGUI : EditorWindow
         switch (scale)
         {
             case "dy_a":
-                go.GetComponent<RectTransform>().anchorMin = Vector2.zero;
-                go.GetComponent<RectTransform>().anchorMax = Vector2.one;
+                if (uiObject["type"].ToString() == "p")
+                {
+                    go.GetComponent<RectTransform>().anchorMin = Vector2.zero;
+                    go.GetComponent<RectTransform>().anchorMax = Vector2.one;
+                }
+                else
+                {
+                    go.GetComponent<RectTransform>().anchorMin = new Vector2(po[0] * 1.0f / width, po[1] * 1.0f / height);
+                    go.GetComponent<RectTransform>().anchorMax = new Vector2(po[2] * 1.0f / width, po[3] * 1.0f / height);
+
+                    go.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
+                    go.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
+                }
+                
                 break;
             case "dy_lr_t":
                 break;
@@ -283,26 +304,9 @@ public class YsToUGUI : EditorWindow
     {
         GameObject go = createGo(uiObject, parent);
         addImage(uiObject, go);
-        rotateGo(go, uiObject["angle"].ToObject<int>());
-
+        rotateGo(uiObject,  go );
         setAnchors(uiObject, go);
-        
-        //图片坐标,大小
-        int[] po = new int[4];
-        int i = 0;
-        foreach (var k in uiObject["bounds"].Children())
-        {
-            po[i++] = (int)k;
-        }
-        //go.GetComponent<RectTransform>().sizeDelta = new Vector2(po[2] - po[0], po[3] - po[1]);
-        //go.GetComponent<RectTransform>().pivot = Vector2.zero;
-        //go.GetComponent<RectTransform>().localPosition = new Vector3((po[0] + po[2]) / 2 - width / 2, (po[1] + po[3]) / 2 - height / 2, 0);
-        Debug.Log(new Vector2(800 - po[2], po[1]));
-        Debug.Log(new Vector2(po[0], 480 - po[3]));
-        go.GetComponent<RectTransform>().sizeDelta = new Vector2(-620,-192);
-        go.GetComponent<RectTransform>().localPosition =new  Vector2(100,0);
-        Debug.Log("~~");
-        Debug.Log(go.GetComponent<RectTransform>().rect);
+
         return go;
     }
     GameObject createBtn(JToken uiObject, GameObject parent)
@@ -322,7 +326,7 @@ public class YsToUGUI : EditorWindow
             {
                 Sprite sprite = (Sprite)Resources.Load(imgPath + "/" + k["resource"], typeof(Sprite));
                 go.GetComponent<Image>().sprite = sprite;
-                rotateGo(go, k["angle"].ToObject<int>());
+                rotateGo(k,go);
             }
             else if(k["type"].ToString()=="pressed")
             {
@@ -364,8 +368,16 @@ public class YsToUGUI : EditorWindow
         {
             po[i++] = (int)k;
         }
-        go.GetComponent<RectTransform>().localPosition = new Vector3(po[0] - width/2, po[1] - int.Parse(uiObject["size"].ToString()) * 0.3f - height/2, 0);
-        go.GetComponent<RectTransform>().pivot = Vector2.zero;
+        Vector3 lpo = new Vector3(po[0] , po[1] - int.Parse(uiObject["size"].ToString()) * 0.3f , 0);
+        //go.GetComponent<RectTransform>().localPosition = new Vector3(po[0] - width / 2, po[1] - int.Parse(uiObject["size"].ToString()) * 0.3f - height / 2, 0);
+        go.GetComponent<RectTransform>().localPosition = new Vector3(0, 0, 0);
+        
+        //go.GetComponent<RectTransform>().pivot = Vector2.zero;
+
+        go.GetComponent<RectTransform>().anchorMin = new Vector2((lpo.x) / width, lpo.y/height);
+        go.GetComponent<RectTransform>().anchorMax = new Vector2((lpo.x+ 100) / width, (lpo.y+100)/height);
+        go.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0);
+        go.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0);
 
         go.AddComponent<Text>();
         go.GetComponent<Text>().text = uiObject["text"].ToString().Substring(1);//内容
@@ -378,16 +390,22 @@ public class YsToUGUI : EditorWindow
         go.GetComponent<Text>().color = new Color(float.Parse(uiObject["color"]["red"].ToString()) / 255, float.Parse(uiObject["color"]["green"].ToString()) / 255, float.Parse(uiObject["color"]["blue"].ToString()) / 255);
         go.GetComponent<Text>().fontSize = int.Parse(uiObject["size"].ToString());
         go.GetComponent<Text>().alignment = TextAnchor.LowerLeft;
+
+
+        //setAnchors(uiObject, go);
+
         return go;
     }
     GameObject createPrgh(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
         addImage(uiObject, go);
-        
+
         go.GetComponent<Image>().type = Image.Type.Filled;
         go.GetComponent<Image>().fillMethod = Image.FillMethod.Horizontal;
-        
+
+        rotateGo(uiObject, go);
+        setAnchors(uiObject, go);
 
 
         return go;
@@ -395,11 +413,25 @@ public class YsToUGUI : EditorWindow
     GameObject createPrgv(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
+        addImage(uiObject, go);
+
+        go.GetComponent<Image>().type = Image.Type.Filled;
+        go.GetComponent<Image>().fillMethod = Image.FillMethod.Vertical;
+
+        rotateGo(uiObject, go);
+        setAnchors(uiObject, go);
         return go;
     }
     GameObject createPrgr(JToken uiObject, GameObject parent)
     {
         GameObject go = createGo(uiObject, parent);
+        addImage(uiObject, go);
+
+        go.GetComponent<Image>().type = Image.Type.Filled;
+        go.GetComponent<Image>().fillMethod = Image.FillMethod.Radial360;
+
+        rotateGo(uiObject, go);
+        setAnchors(uiObject, go);
         return go;
     }
     GameObject createList(JToken uiObject, GameObject parent)
